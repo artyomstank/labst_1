@@ -1,0 +1,44 @@
+{
+  "tragedys": [
+    {
+      "title": "Groza",
+      "price": 255,
+      "pages": 260
+    }
+  ],
+  "ScienceFictions": [
+    {
+      "title": "Dune",
+      "price": 700,
+      "paper": "bad"
+    }
+  ],
+  "Fairytales": [
+    {
+      "title": "Little Red Riding Hood",
+      "price": 340,
+      "author": "Charles Perrault"
+    }
+  ],
+  "Fantasys": [
+    {
+      "title": "451 degrees Fahrenheit",
+      "price": 500,
+      "paper_color": "yellow"
+    }
+  ],
+  "Adventures": [
+    {
+      "title": "The Bird Eater",
+      "price": 229,
+      "chapters": "18"
+    }
+  ],
+  "CrimeAndMysterys": [
+    {
+      "title": "Murder in Mesopotamia",
+      "price": 100,
+      "main_character": "Hercule Poirot"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<books>
+  <tragedys>
+    <tragedy>
+      <title>Romeo and Juliet</title>
+      <price>300</price>
+      <pages>1300</pages>
+    </tragedy>
+  </tragedys>
+  <ScienceFictions>
+    <ScienceFiction>
+      <title>The war of the worlds</title>
+      <price>350</price>
+      <paper>good</paper>
+    </ScienceFiction>
+    <ScienceFiction>
+      <title>451 Farenheit</title>
+      <price>100</price>
+      <paper>not good</paper>
+    </ScienceFiction>
+  </ScienceFictions>
+  <Fairytales>
+    <Fairytale>
+      <title>Snow White</title>
+      <price>340</price>
+      <author>brothers Grimm</author>
+    </Fairytale>
+  </Fairytales>
+  <Fantasys>
+    <Fantasy>
+      <title>Harry Potter</title>
+      <price>150</price>
+      <paper_color>white</paper_color>
+    </Fantasy>
+  </Fantasys>
+  <Adventures>
+    <Adventure>
+      <title>The Hobbit</title>
+      <price>550</price>
+      <chapters>14</chapters>
+    </Adventure>
+  </Adventures>
+  <CrimeAndMysterys>
+    <CrimeAndMystery>
+      <title>Sherlock Holmes</title>
+      <price>287</price>
+      <main_character>Sherlock Holmes</main_character>
+    </CrimeAndMystery>
+  </CrimeAndMysterys>
+</books>
