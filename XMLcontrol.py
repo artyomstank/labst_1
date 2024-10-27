@@ -1,6 +1,10 @@
 import xml.etree.ElementTree as ET
-class DisplayXml:
 
+
+# файл работы с XML
+class DisplayXml:
+    # Эта функция форматирует XML-дерево, добавляя отступы и переносы строк,
+    # чтобы структура данных выглядела более читабельной.
     def indent(elem, level=0):
         i = "\n" + level * "  "
         if len(elem):
@@ -16,6 +20,8 @@ class DisplayXml:
             if level and (not elem.tail or not elem.tail.strip()):
                 elem.tail = i
 
+    # Эти функции позволяют сохранять данные о книгах в XML
+    # и загружать их, восстанавливая из файла обратно в структуру данных Python.
     def save_to_xml(data, filename):
 
         root = ET.Element('books')
@@ -62,26 +68,26 @@ class DisplayXml:
                 child = ET.SubElement(CrimeAndMystery_element, key)
                 child.text = str(value)
 
-#oooomagad
-
         DisplayXml.indent(root)
-                # Создаем дерево XML и записываем его в файл
-        try: #Обработка встроенной ошибки
+        # Обрабатываем исключения при загрузки данных в файл
+        try:
             tree = ET.ElementTree(root)
             tree.write(filename, encoding='utf-8', xml_declaration=True)
             print(f"Все книги успешно сохранены в файл '{filename}'")
         except IOError as e:
             print(f"Ошибка при записи в XML-файл: {str(e)}")
 
+    # Обработка исключений при звыгрузки данных из файла
     def load_from_xml(filename):
-        try: #Обработка встроенной ошибки
+        try:
             tree = ET.parse(filename)
             root = tree.getroot()
         except FileNotFoundError:
-            return {"tragedys": [], "ScienceFictions": [], "Fairytales": [], "Fantasys": [],"Adventures": [],"CrimeAndMysterys": [],"soups": [],"Classics": []}
+            return {"tragedys": [], "ScienceFictions": [], "Fairytales": [], "Fantasys": [], "Adventures": [],
+                    "CrimeAndMysterys": []}
 
-        data = {"tragedys": [], "ScienceFictions": [], "Fairytales": [], "Fantasys": [],"Adventures": [],"CrimeAndMysterys": [],"soups": [],"Classics": []}
-
+        data = {"tragedys": [], "ScienceFictions": [], "Fairytales": [], "Fantasys": [], "Adventures": [],
+                "CrimeAndMysterys": []}
 
         tragedys = root.find('tragedys')
         if tragedys is not None:
@@ -98,7 +104,6 @@ class DisplayXml:
                 for child in i:
                     drink_data[child.tag] = child.text
                 data['ScienceFictions'].append(drink_data)
-
 
         Fairytales = root.find('Fairytales')
         if Fairytales is not None:
@@ -134,7 +139,7 @@ class DisplayXml:
 
         return data
 
-    #Добавление книг
+    # Функции добавления книг
     def add_tragedy(data, tragedy):
         data['tragedys'].append(tragedy.to_dict())
 
@@ -152,4 +157,3 @@ class DisplayXml:
 
     def add_CrimeAndMystery(data, CrimeAndMystery):
         data['CrimeAndMysterys'].append(CrimeAndMystery.to_dict())
-

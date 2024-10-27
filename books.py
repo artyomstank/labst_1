@@ -11,6 +11,7 @@ class Book:
             "price": self.price
         }
 
+
 class Tragedy(Book):
     def __init__(self, title, price, pages):
         super().__init__(title, price)
@@ -29,13 +30,13 @@ class ScienceFiction(Book):
         super().__init__(title, price)
         self.paper = paper
 
-
     def to_dict(self):
         Science_Fiction_dict = super().to_dict()
         Science_Fiction_dict.update({
             "paper": self.paper,
         })
         return Science_Fiction_dict
+
 
 class Fairytale(Book):
     def __init__(self, title, price, author):
@@ -50,12 +51,10 @@ class Fairytale(Book):
         return Fairytale_dict
 
 
-
 class Fantasy(Book):
     def __init__(self, title, price, paper_color):
         super().__init__(title, price)
         self.paper_color = paper_color
-
 
     def to_dict(self):
         Fantasy_dict = super().to_dict()
@@ -63,6 +62,7 @@ class Fantasy(Book):
             "paper_color": self.paper_color,
         })
         return Fantasy_dict
+
 
 class Adventure(Book):
     def __init__(self, title, price, chapters):
@@ -81,7 +81,6 @@ class CrimeAndMystery(Book):
     def __init__(self, title, price, main_character):
         super().__init__(title, price)
         self.main_character = main_character
-
 
     def to_dict(self):
         CAM_dict = super().to_dict()
